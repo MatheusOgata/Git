@@ -1,0 +1,162 @@
+Curso Git/GitHub comandos e exemplos
+
+Definições:
+
+Working directory: É o local onde se esta editando o arquivo. O PC.
+Stage Area: Area intermediária.
+Repositório: Local onde são salvas as versões do projeto.
+
+
+ACESSAR PASTA:
+
+cd <nome da pasta> --> Acessa pasta. 
+cd <pasta1/pasta2/pastaN> --> Acesso de pastas dentro de pastas.
+cd .. --> Volta pasta por pasta.
+
+CONFIGURAR REPOSITÓRIO REMOTO NO COMPUTADOR
+1° ssh-keygen --> Gera chaves ssh para Linkar com repositório remoto.
+2° Abrir o arquivo ".Pub".
+3° Copiar o código gerado.
+4° Acessar no Github account\Setting\SSH_and_GPG_Keys
+5° Adicionar o código gerado.
+
+CLONAR REPOSIÓRIO
+1° Copiar o endereço SSH do Github.
+2° Acessar a pasta na qual será clonado o repositório.
+3° git clone <Endereço SSH> <Nome da pasta do repositório>.
+
+LIMPAR:
+
+clear --> Apaga todos os comandos anteriores.
+
+CRIAR REPOSITÓRIO:
+
+1° acessar a pasta onde desejo criar o repositório.
+2° Digitar o comando "git init" e será criado um repositório na pasta.
+
+OBS.: A pasta ".Git" fica oculta. Para acessa-la é só digitar o caminho completo.
+Ex: C:\Projetos Git-Hub\Local\Geral\Curso_GIT\.git
+
+STATUS DO REPOSITÓRIO:
+
+git status --> Dá o status atual do repositório.
+
+
+ADICIONAR ARQUIVOS:
+
+Mover o arquivo do working directory para a stage area
+
+git add <nome do arquivo .extensão> --> Adiciona o arquivo.
+git add *.extensão --> Adiciona todos os arquivos da extensão descrita.
+git add . --> Adiciona todos os arquivos do diretório.
+
+COMMIT:
+
+Confirmar ou salvar as mudanças realizadas no projeto e enviar para o diretório.
+
+git commit -m "<mensagem>" --> Salva as alterações realizadas e grava uma mensagem para indicar as alterações realizadas.
+
+.GITIGNORE:
+
+Cria um arquivo no qual é utilizado para indicar arquivos que devem ser ignorados pelo GIT.
+
+No git bash, acessar o repositório onde se deseja criar o arquivo. E dar o comando " touch .gitignore"
+ 
+
+
+CONSULTAR ALTERAÇÕES E COMMITS:
+
+git diff -->Consultar alterações que estão na STAGE AREA (antes do git add)
+
+git diff --staged --> Consultar alterações na STAGE AREA (depois do git add)
+
+git log --> Mostra um log (histórico) de todos os commits desde a criação do diretório.
+
+git log -p --> Mostra um log (histórico) de todos os commits desde a criação do diretório. Além de mostrar as alterções realizadas no arquivos. ( Pressionar a letra "Q" para voltar para os comandos).
+
+git log -p -<número do commit> --> Pega os ultimos commits realizado, junto com suas modificações. EX.: git log -p -1 ---> vai retornar o último commit realizado.
+
+gitk --> Interface para visualizar auterações, quando, quem , o que foi feito e etc.
+
+git log --pretty=oneline --> Mostra  o código e a descrição de cada commit em uma linha por commit.
+
+EDITAR COMMIT:
+
+git commit --amend -m "<Mensagem>" -->Edita commit mais recente.
+
+REMOVER ARQUIVO: 
+
+git reset HEAD <arquivo.extensão> -->Remove arquivo adicionado na STAGE AREA.
+
+
+
+DESFAZER ALTERAÇÕES: 
+
+git checkout -- <arquivo.extensão> --> Desfaz alterações no arquivo. Voltando o arquivo para a versão do ultimo commit. Para arquivos na STAGE AREA. 
+
+git reset HEAD^ --> Exclui o ultimo commit.
+
+REMOVER ARQUIVOS:
+
+git rm <arquivo.extensão> --> Deletar arquivos do repositório.
+
+TAG
+
+TAG são etiquetas, um ponto de atalho ou marcações.
+
+git tag --> Listar tags do sistema.
+
+git tag -a <nome da tag> -m "<mensagem>" --> Criar tag. Tag para o commit atual.
+
+git tag -a <nome da tag> <chave de identificação do commit> -m "<mensagem>" --> Criar tag para commit anteriores. 
+
+git show <nome da tag> --> Mostra detalhes dos commits.
+
+****git checkout <nome da tag> --> Trocar o arquivo para a versão     desejada.
+
+git tag -d <nome da tag> --> deletar tag.
+
+
+
+BRANCH (RAMIFICAÇÕES):
+
+git branch <nome do branch> --> Criar branch
+
+git checkout <nome do branch> --> Transição dos arquivos para o BRANCH, ou seja, colocar o WORKING DIRECTORY no branch.
+
+git checkout -b <nome do branch> --> Cria o BRANCH e já altera o WORKING DIRECTORY para o brench criado.
+
+git checkout master --> Troca o ambiente para o ambiente master.
+
+git merge <BRANCH de origem> -->Trás a alterações realizadas em um determinado BRANCH, para o branch atual.
+
+git branch -D <nome do branch> --> Deleta BRANCH.
+
+git branch --> Lista todos os BRANCHES existentes no repositório.
+
+git checkout -b <Novo ramo> <Origem do ramo> --> Ex.: $ git checkout -b myFeature dev  --> cria o ramo "myFeature" a partir do ramo "dev".
+
+
+GIT/GITHUB:
+
+git clone <endereço ssh> <nome do repositório> --> Cria pasta para se conectar ao GITHUB.
+
+git push origin master --> Enviar o arquivo para o repositório do GITHUB.
+
+git pull origin master --> atualizar repositório local com os arquivos do repositório do GITHUB.
+
+git push -u origin <Branch name> --> Sobe um branch local para o repositório remoto(github).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
