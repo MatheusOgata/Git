@@ -1,16 +1,16 @@
 
 ##############################################################
-############					  ############						
+############					                  ############						
 ############              DEFINIÇÕES              ############
 ############                                      ############
 ##############################################################
-Working directory: É o local onde se esta editando o arquivo. O PC.
+Working directory: É o local onde esta editando o arquivo. 
 Stage Area: Area intermediária.
 Repositório: Local onde são salvas as versões do projeto.
  
  
 ##############################################################
-############					  ############						
+############					                  ############						
 ############             ACESSAR PASTAS           ############
 ############                                      ############
 ##############################################################
@@ -20,8 +20,8 @@ cd .. --> Volta pasta por pasta.
 
 
 ##############################################################
-############					  ############						
-############ CONFIGURAR REPOSITÓRIO REMOTO NO PC  ############
+############					  				  ############						
+############ CONFIGURAR REPOSITÓRIO DO GIT NO PC  ############
 ############                                      ############
 ##############################################################
 1° ssh-keygen --> Gera chaves ssh para Linkar com repositório remoto.
@@ -32,7 +32,7 @@ cd .. --> Volta pasta por pasta.
 
 
 ##############################################################
-############					  ############						
+############					  				  ############						
 ############	     CLONAR REPOSITÓRIO           ############
 ############                                      ############
 ##############################################################
@@ -42,7 +42,7 @@ cd .. --> Volta pasta por pasta.
 
 
 ##############################################################
-############					  ############						
+############					                  ############						
 ############	     CRIAR REPOSITÓRIO            ############
 ############                                      ############
 ##############################################################
@@ -54,13 +54,13 @@ Ex: C:\Projetos Git-Hub\Local\Geral\Curso_GIT\.git
 
 
 ##############################################################
-############					  ############						
-############		    COMANDOS              ############
+############					                  ############						
+############		    COMANDOS                  ############
 ############                                      ############
 ##############################################################
 
 *****************************
-******		       ******	
+******		           ******	
 ******     STATUS      ******
 ******                 ******
 *****************************
@@ -68,7 +68,7 @@ git status --> Dá o status atual do repositório.
 
 
 ***********************************
-******		             ******	
+******		                 ******	
 ******   ADICIONAR ARQUIVOS  ******
 ******                       ******
 ***********************************
@@ -80,7 +80,7 @@ git add . --> Adiciona todos os arquivos do diretório.
 
 
 *****************************
-******		       ******	
+******		           ******	
 ******   .GITIGNORE    ******
 ******                 ******
 *****************************
@@ -96,7 +96,7 @@ Para ignoras todos os arquivos de uma determinada extensão, basta digitar:
 
 
 *****************************
-******		       ******	
+******		       	   ******	
 ******    LOG/DIFF     ******
 ******                 ******
 *****************************
@@ -120,7 +120,7 @@ gitk --> Interface para visualizar auterações, quando, quem , o que foi feito e 
 
 
 ***********************************
-******			     ******	
+******			     		 ******	
 ******  DESFAZER ALTERAÇÕES  ******
 ******                       ******
 ***********************************
@@ -130,7 +130,7 @@ git reset HEAD^ --> Exclui o ultimo commit.
 
 
 ********************************
-******			  ******	
+******			  		  ******	
 ******  REMOVER ARQUIVOS  ******
 ******                    ******
 ********************************
@@ -140,7 +140,7 @@ git reset HEAD <arquivo.extensão> -->Remove arquivo adicionado na STAGE AREA.
 
 
 *****************************
-******		       ******	
+******		       	   ******	
 ******       TAG       ******
 ******                 ******
 *****************************
@@ -160,7 +160,7 @@ git tag -d <nome da tag> --> deletar tag.
 
 
 *****************************
-******		       ******	
+******		           ******	
 ******     COMMIT      ******
 ******                 ******
 *****************************
@@ -172,7 +172,7 @@ git commit --amend --no-edit -->Salva as alterações no Commit mais recente.
 
 
 *****************************
-******		       ******	
+******		           ******	
 ******     BRANCH      ******
 ******                 ******
 *****************************
@@ -192,7 +192,7 @@ git checkout -b <Novo ramo> <Origem do ramo> --> Ex.: $ git checkout -b myFeatur
 
 
 *****************************
-******		       ******	
+******		           ******	
 ******  MERGE/REBASE   ******
 ******                 ******
 *****************************
@@ -215,11 +215,11 @@ git checkout topic
 git rebase --onto B A		
 
 
-*****************************
-******		       ******	
-******    GIT/GITHUB   ******
-******                 ******
-*****************************
+*************************************
+******		           	       ******	
+******    REPOSITÓRIO REMOTO   ******
+******                 		   ******
+*************************************
 git clone <endereço ssh> <nome do repositório> --> Cria pasta para se conectar ao GITHUB.
 
 git push origin master --> Enviar o arquivo para o repositório do GITHUB.
@@ -228,9 +228,33 @@ git pull origin master --> atualizar repositório local com os arquivos do reposi
 
 git push -u origin <Branch name> --> Sobe um branch local para o repositório remoto(github).
 
+git remote add origin <rep_url> --> Configura um repositório remoto a um repositório local.
+
+
+******************************
+******		           	******	
+******    SUB MODULES   ******
+******                 	******
+******************************
+git submodule add <submodule_repo_url> --> Adiciona um sub modulo (outro repositório) ao repositório atual. 
+
+git config submodule.recurse <flag> --> Esse commando indica que todos os comandos devem ou não ser executados 
+										pelos submodulos também. 
+										flag = true: Os submodulos devem executar os comandos.
+										flag = false: Os submodulos NÃO devem executar os comandos.
+
+--recurse-submodules --> Esta Flag indica que o comando deve ser executado pelos submodulo também. Ex.: git pull --recurse-submodules
+
+git clone <endereço ssh> --recurse-submodules --> Clona o repositório e seus respectivos submodulos.
+
+git submodule update --init --> Caso tenha clonado o repositório sem os submodulos, basta executar esse comando para atualiza-los.
+
+Obs.: Ao utilizar comandos git em um repositório que possua sub modulos, os comando serão ignorados pelos sub modulos, 
+	  caso não seja indicado explicitamente ao git, através de comandos, que os comandos devem ser aceitos pelos submodulos
+	  também.
 
 *****************************
-******		       ******	
+******		           ******	
 ******      OUTROS     ******
 ******                 ******
 *****************************
