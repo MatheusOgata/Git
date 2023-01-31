@@ -201,6 +201,7 @@ git checkout -b <Novo ramo> <Origem do ramo> --> Ex.: $ git checkout -b myFeatur
 git merge <BRANCH de origem> -->Trás a alterações realizadas em um determinado BRANCH, para o branch atual.
 
 git rebase --onto <nova_base> <base_anterior> --> Altera o ponto de partida de um ou mais Commits.
+
 Ex.:
 
 from:
@@ -216,6 +217,22 @@ A --- B --- C          master
 git checkout topic
 git rebase --onto B A		
 
+É possível realizar o rebase sem excluir o Branch a ser alterado. Basta criar um branch e 
+executar o comando rebase desta forma:
+
+git rebase --onto <nova_base> <base_anterior> <Branch_novo>
+
+git checkout Branch_X
+git branch Branch_rebase Branch_X
+git rebase --onto New_base master Branch_rebase
+
+      o---o---o  Branch_rebase (Branch_X')
+     /
+o---o  New_base
+     \
+      o---o---o---o---o  master
+                       \
+                        o---o---o  Branch_X
 
 *************************************
 ******		           	       ******	
