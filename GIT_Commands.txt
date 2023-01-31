@@ -104,7 +104,9 @@ git diff -->Compara alterações que estão na STAGE AREA (antes do git add)
 
 git diff --staged -->Compara alterações na STAGE AREA (depois do git add)
 
-git diff <Branch_1>..<Branch_2> -->Compara alterações entre dois Branches.
+git diff <Branch_1>..<Branch_2> -->Compara alterações entre dois Branches mostrando linha a linha.
+
+git --no-pager diff <Branch_1>..<Branch_2> -->Compara alterações entre dois Branches mostrando tudo de uma vez.
 
 git log --> Mostra um log (histórico) de todos os commits desde a criação do diretório.
 
